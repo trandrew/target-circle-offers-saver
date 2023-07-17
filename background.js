@@ -1,19 +1,19 @@
 async function collecOffers() {
   // Show banner
   document.getElementById('__next').innerHTML += `
-  <div id="target-offer-collector-banner">
-    <button id="target-offer-collector-close">x</button>
+  <div id="target-circle-offers-saver-banner">
+    <button id="target-circle-offers-saver-close">x</button>
     <span>Target Circle Offer Saver is currently running on this page.</span> <br>
     <span id="target-offer-banner-content"></span> <br>
   </div>
   <style>
-    #target-offer-collector-close {
+    #target-circle-offers-saver-close {
       float: right;
       display: inline-block;
       padding: 0 10px 0 0;
     }
 
-    #target-offer-collector-banner {
+    #target-circle-offers-saver-banner {
       position: sticky;
       bottom: 0;
       background-color: #006fcf;
@@ -26,7 +26,7 @@ async function collecOffers() {
       z-index: 99999;
     }
     
-    #target-offer-collector-banner a, #target-offer-collector-banner #cta-content {
+    #target-circle-offers-saver-banner a, #target-circle-offers-saver-banner #cta-content {
       border-radius: 100px;
       cursor: pointer;
       display: inline-block;
@@ -42,32 +42,32 @@ async function collecOffers() {
       touch-action: manipulation;
     }
     
-    #target-offer-collector-banner .center {
+    #target-circle-offers-saver-banner .center {
       margin: auto;
       width: 50%;
       padding: 10px;
       text-align: center;
     }
     
-    #target-offer-collector-banner a#target-offer-collector-bug {
+    #target-circle-offers-saver-banner a#target-circle-offers-saver-bug {
       background-color: #d1320a;
       box-shadow: rgba(241, 7, 7, 0.2) 0 -25px 18px -14px inset,rgba(241, 7, 7, .15) 0 1px 2px,rgba(241, 7, 7, .15) 0 2px 4px,rgba(241, 7, 7, .15) 0 4px 8px,rgba(241, 7, 7, .15) 0 8px 16px,rgba(241, 7, 7, .15) 0 16px 32px;
       color: white;
       margin-top: 10px;
     }
     
-    #target-offer-collector-banner a#target-offer-collector-bug:hover {
+    #target-circle-offers-saver-banner a#target-circle-offers-saver-bug:hover {
       box-shadow: rgba(241, 7, 7, .35) 0 -25px 18px -14px inset,rgba(241, 7, 7, .25) 0 1px 2px,rgba(241, 7, 7,.25) 0 2px 4px,rgba(241, 7, 7,.25) 0 4px 8px,rgba(241, 7, 7,.25) 0 8px 16px,rgba(241, 7, 7,.25) 0 16px 32px;
       transform: scale(1.05) rotate(-1deg);
     }
   </style>
   `;
 
-  document.getElementById('target-offer-collector-banner').innerHTML += `<a id='target-offer-collector-bug' class="btn btn-primary" href="https://airtable.com/shrko65ccCW6fo8BZ" target="_blank" rel="noopener noreferrer" role="button">Report Bug</a> <br></br>`;
+  document.getElementById('target-circle-offers-saver-banner').innerHTML += `<a id='target-circle-offers-saver-bug' class="btn btn-primary" href="https://airtable.com/shrko65ccCW6fo8BZ" target="_blank" rel="noopener noreferrer" role="button">Report Bug</a> <br></br>`;
   document.getElementById('target-offer-banner-content').innerText = `Getting things ready ...`;
  
   // attach event handler for close button
-  document.getElementById('target-offer-collector-close').onclick = function(){
+  document.getElementById('target-circle-offers-saver-close').onclick = function(){
     this.parentNode.remove();
     return false;
   };
