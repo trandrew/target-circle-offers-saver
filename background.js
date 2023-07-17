@@ -78,7 +78,7 @@ async function collecOffers() {
   var index;
 
   for (index = 0; index < offerButtons.length; ++index) {
-    document.getElementById('target-offer-banner-content').innerText = `${total} offers collected`;
+    document.getElementById('target-offer-banner-content').innerText = `${index} offers collected`;
     console.log(index);
     console.log(offerButtons[index]);
     offerButtons[index].click();
