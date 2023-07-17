@@ -1,6 +1,6 @@
 async function collecOffers() {
   // Show banner
-  document.getElementById('__next').innerHTML += `
+  document.getElementById('skipLinks').innerHTML += `
   <div id="target-circle-offers-saver-banner">
     <button id="target-circle-offers-saver-close">x</button>
     <span>Target Circle Offer Saver is currently running on this page.</span> <br>
@@ -76,15 +76,23 @@ async function collecOffers() {
   var offerButtons = Array.from(document.getElementsByClassName("cuamvm")).filter(div => div.textContent == "Save offer");
   console.log(offerButtons);
   var index;
+
   for (index = 0; index < offerButtons.length; ++index) {
-    document.getElementById('target-offer-banner-content').innerText = `${index} offers collected`;
+    document.getElementById('target-offer-banner-content').innerText = `${total} offers collected`;
     console.log(index);
     console.log(offerButtons[index]);
     offerButtons[index].click();
-    
 
     await new Promise(r => setTimeout(r, 1000));
   }
+
+  // load more functionality, but max saved offers is 75 and will max out quickly
+  /* if (document.querySelector("#__next > div.max-width-container > div.styles__OffersSectionContainer-sc-1oq25qv-0.cVfuFu > div.h-text-center.h-margin-v-jumbo > button")) {
+    document.querySelector("#__next > div.max-width-container > div.styles__OffersSectionContainer-sc-1oq25qv-0.cVfuFu > div.h-text-center.h-margin-v-jumbo > button").click();
+    console.log(`Found Load more button. Clicking now.`);
+    collecOffers();
+  } */
+
 
   document.getElementById('target-offer-banner-content').innerText = `All available offers collected! =)\nPlease refresh the page to remove this banner.`;
 }
