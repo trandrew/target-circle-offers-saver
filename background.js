@@ -1,19 +1,19 @@
 async function collecOffers() {
   // Show banner
-  document.getElementById('skipToContent').innerHTML += `
-  <div id="amex-offer-collector-banner">
-    <button id="amex-offer-collector-close">x</button>
-    <span>Amex Offer Collector is currently running on this page.</span> <br>
-    <span id="amex-offer-banner-content"></span> <br>
+  document.getElementById('__next').innerHTML += `
+  <div id="target-offer-collector-banner">
+    <button id="target-offer-collector-close">x</button>
+    <span>Target Circle Offer Saver is currently running on this page.</span> <br>
+    <span id="target-offer-banner-content"></span> <br>
   </div>
   <style>
-    #amex-offer-collector-close {
+    #target-offer-collector-close {
       float: right;
       display: inline-block;
       padding: 0 10px 0 0;
     }
 
-    #amex-offer-collector-banner {
+    #target-offer-collector-banner {
       position: sticky;
       bottom: 0;
       background-color: #006fcf;
@@ -26,7 +26,7 @@ async function collecOffers() {
       z-index: 99999;
     }
     
-    #amex-offer-collector-banner a, #amex-offer-collector-banner #cta-content {
+    #target-offer-collector-banner a, #target-offer-collector-banner #cta-content {
       border-radius: 100px;
       cursor: pointer;
       display: inline-block;
@@ -42,59 +42,63 @@ async function collecOffers() {
       touch-action: manipulation;
     }
     
-    #amex-offer-collector-banner .center {
+    #target-offer-collector-banner .center {
       margin: auto;
       width: 50%;
       padding: 10px;
       text-align: center;
     }
     
-    #amex-offer-collector-banner a#amex-offer-collector-bug {
+    #target-offer-collector-banner a#target-offer-collector-bug {
       background-color: #d1320a;
       box-shadow: rgba(241, 7, 7, 0.2) 0 -25px 18px -14px inset,rgba(241, 7, 7, .15) 0 1px 2px,rgba(241, 7, 7, .15) 0 2px 4px,rgba(241, 7, 7, .15) 0 4px 8px,rgba(241, 7, 7, .15) 0 8px 16px,rgba(241, 7, 7, .15) 0 16px 32px;
       color: white;
       margin-top: 10px;
     }
     
-    #amex-offer-collector-banner a#amex-offer-collector-bug:hover {
+    #target-offer-collector-banner a#target-offer-collector-bug:hover {
       box-shadow: rgba(241, 7, 7, .35) 0 -25px 18px -14px inset,rgba(241, 7, 7, .25) 0 1px 2px,rgba(241, 7, 7,.25) 0 2px 4px,rgba(241, 7, 7,.25) 0 4px 8px,rgba(241, 7, 7,.25) 0 8px 16px,rgba(241, 7, 7,.25) 0 16px 32px;
       transform: scale(1.05) rotate(-1deg);
     }
   </style>
   `;
 
-  document.getElementById('amex-offer-collector-banner').innerHTML += `<a id='amex-offer-collector-bug' class="btn btn-primary" href="https://airtable.com/shrko65ccCW6fo8BZ" target="_blank" rel="noopener noreferrer" role="button">Report Bug</a> <br></br>`;
-  document.getElementById('amex-offer-banner-content').innerText = `Getting things ready ...`;
-
+  document.getElementById('target-offer-collector-banner').innerHTML += `<a id='target-offer-collector-bug' class="btn btn-primary" href="https://airtable.com/shrko65ccCW6fo8BZ" target="_blank" rel="noopener noreferrer" role="button">Report Bug</a> <br></br>`;
+  document.getElementById('target-offer-banner-content').innerText = `Getting things ready ...`;
+ 
   // attach event handler for close button
-  document.getElementById('amex-offer-collector-close').onclick = function(){
-    this.parentNode.parentNode.remove();
+  document.getElementById('target-offer-collector-close').onclick = function(){
+    this.parentNode.remove();
     return false;
   };
 
   await new Promise(r => setTimeout(r, 4000));
 
-  var offerButtons = Array.from(document.getElementsByClassName("offer-cta")).filter(btn => btn.title == "Add to Card");
+  var offerButtons = Array.from(document.getElementsByClassName("cuamvm")).filter(div => div.textContent == "Save offer");
+  console.log(offerButtons);
   var index;
   for (index = 0; index < offerButtons.length; ++index) {
-    document.getElementById('amex-offer-banner-content').innerText = `${index} offers collected`;
+    document.getElementById('target-offer-banner-content').innerText = `${index} offers collected`;
+    console.log(index);
+    console.log(offerButtons[index]);
     offerButtons[index].click();
+    
 
     await new Promise(r => setTimeout(r, 1000));
   }
 
-  document.getElementById('amex-offer-banner-content').innerText = `All available offers collected! =)\nPlease refresh the page to remove this banner.`;
+  document.getElementById('target-offer-banner-content').innerText = `All available offers collected! =)\nPlease refresh the page to remove this banner.`;
 }
 
 chrome.action.onClicked.addListener((tab) => {
-  if (tab.url.includes('https://global.americanexpress.com/offers/eligible')) {
+  if (tab.url.includes('https://www.target.com/circle/offers')) {
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
       function: collecOffers
     });
-  } else if (tab.url.includes('https://global.americanexpress.com')) {
+  } else if (tab.url.includes('https://www.target.com')) {
     chrome.tabs.update({
-      url: 'https://global.americanexpress.com/offers/eligible'
+      url: 'https://www.target.com/circle/offers'
     }, function (currentTab) {
       var listener = function(tabId, changeInfo, tab) {
         if (tabId == currentTab.id && changeInfo.status === 'complete') {
