@@ -1,4 +1,4 @@
-#target-offer-collector-banner {
+#target-circle-offers-saver-banner {
   position: sticky;
   bottom: 0;
   background-color: #9900ff;
@@ -11,7 +11,7 @@
   z-index: 99999;
 }
 
-#target-offer-collector-banner a, #target-offer-collector-banner #cta-content {
+#target-circle-offers-saver-banner a, #target-circle-offers-saver-banner #cta-content {
   border-radius: 100px;
   cursor: pointer;
   display: inline-block;
@@ -27,20 +27,20 @@
   touch-action: manipulation;
 }
 
-#target-offer-collector-banner .center {
+#target-circle-offers-saver-banner .center {
   margin: auto;
   width: 50%;
   padding: 10px;
   text-align: center;
 }
 
-#target-offer-collector-banner a#target-offer-collector-bug {
+#target-circle-offers-saver-banner a#target-circle-offers-saver-bug {
   background-color: #d1320a;
   box-shadow: rgba(241, 7, 7, 0.2) 0 -25px 18px -14px inset,rgba(241, 7, 7, .15) 0 1px 2px,rgba(241, 7, 7, .15) 0 2px 4px,rgba(241, 7, 7, .15) 0 4px 8px,rgba(241, 7, 7, .15) 0 8px 16px,rgba(241, 7, 7, .15) 0 16px 32px;
   color: white;
 }
 
-#target-offer-collector-banner a#target-offer-collector-bug:hover {
+#target-circle-offers-saver-banner a#target-circle-offers-saver-bug:hover {
   box-shadow: rgba(241, 7, 7, .35) 0 -25px 18px -14px inset,rgba(241, 7, 7, .25) 0 1px 2px,rgba(241, 7, 7,.25) 0 2px 4px,rgba(241, 7, 7,.25) 0 4px 8px,rgba(241, 7, 7,.25) 0 8px 16px,rgba(241, 7, 7,.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
