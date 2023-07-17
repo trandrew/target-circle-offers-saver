@@ -1,17 +1,17 @@
 {
-  "name": "Amex Offer Collector",
+  "name": "Target Circle Offers Saver",
   "action": {},
-  "manifest_version": 3,
-  "version": "0.0.3",
-  "description": "A simple Chrome Extension that adds all Amex offers with a single click",
+  "manifest_version": 1,
+  "version": "0.0.1",
+  "description": "A simple Chrome Extension that adds all Target Circle offers with a single click",
   "permissions": ["activeTab", "scripting"],
   "background": {
     "service_worker": "background.js"
   },
   "icons": {
-    "16": "icons/amex-offer-collector-icon.png",
-    "32": "icons/amex-offer-collector-icon.png",
-    "48": "icons/amex-offer-collector-icon.png",
-    "128": "icons/amex-offer-collector-icon.png"
+    "16": "icons/target-offer-collector-icon.png",
+    "32": "icons/target-offer-collector-icon.png",
+    "48": "icons/target-offer-collector-icon.png",
+    "128": "icons/target-offer-collector-icon.png"
   }
 }
