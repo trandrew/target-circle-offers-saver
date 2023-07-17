@@ -9,9 +9,9 @@
     "service_worker": "background.js"
   },
   "icons": {
-    "16": "icons/target-offer-collector-icon.png",
-    "32": "icons/target-offer-collector-icon.png",
-    "48": "icons/target-offer-collector-icon.png",
-    "128": "icons/target-offer-collector-icon.png"
+    "16": "icons/target-circle-offers-saver-icon.png",
+    "32": "icons/target-circle-offers-saver-icon.png",
+    "48": "icons/target-circle-offers-saver-icon.png",
+    "128": "icons/target-circle-offers-saver-icon.png"
   }
 }
