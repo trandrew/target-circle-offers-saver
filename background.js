@@ -63,7 +63,6 @@ async function collecOffers() {
   </style>
   `;
 
-  document.getElementById('target-circle-offers-saver-banner').innerHTML += `<a id='target-circle-offers-saver-bug' class="btn btn-primary" href="https://airtable.com/shrko65ccCW6fo8BZ" target="_blank" rel="noopener noreferrer" role="button">Report Bug</a> <br></br>`;
   document.getElementById('target-offer-banner-content').innerText = `Getting things ready ...`;
  
   // attach event handler for close button
