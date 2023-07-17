@@ -1,7 +1,7 @@
 {
   "name": "Target Circle Offers Saver",
   "action": {},
-  "manifest_version": 1,
+  "manifest_version": 3,
   "version": "0.0.1",
   "description": "A simple Chrome Extension that adds all Target Circle offers with a single click",
   "permissions": ["activeTab", "scripting"],
